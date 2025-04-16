@@ -1,6 +1,8 @@
+// app/courses/[slug]/page.tsx
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { GetStaticPropsContext, GetStaticPaths } from 'next';
+import { notFound } from 'next/navigation';
 
 interface Course {
   name: string;
@@ -9,11 +11,7 @@ interface Course {
   topics: string[];
 }
 
-interface CourseProps {
-  course: Course | null;
-}
-
-// Dummy data
+// Dummy course data
 const dummyCourses: Record<string, Course> = {
   'web-development': {
     name: 'Web Development Bootcamp',
@@ -41,22 +39,19 @@ const dummyCourses: Record<string, Course> = {
   }
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.keys(dummyCourses).map((slug) => ({
-    params: { slug },
+// Static generation helper
+export async function generateStaticParams() {
+  return Object.keys(dummyCourses).map((slug) => ({
+    slug,
   }));
-  return { paths, fallback: false };
-};
-
-export async function getStaticProps(context: GetStaticPropsContext): Promise<{ props: CourseProps }> {
-  const slug = context.params?.slug as string;
-  const course = dummyCourses[slug] || null;
-  return { props: { course } };
 }
 
-const CourseDetails = ({ course }: CourseProps) => {
+// Dynamic course page
+export default function CourseDetails({ params }: { params: { slug: string } }) {
+  const course = dummyCourses[params.slug];
+
   if (!course) {
-    return <div>Course not found!</div>;
+    notFound(); // shows the 404 page
   }
 
   return (
@@ -69,7 +64,7 @@ const CourseDetails = ({ course }: CourseProps) => {
         </div>
       </section>
 
-      {/* Course Content Section */}
+      {/* Course Content */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-800 mb-12">Course Overview</h2>
@@ -95,7 +90,7 @@ const CourseDetails = ({ course }: CourseProps) => {
         </div>
       </section>
 
-      {/* Enrollment Section */}
+      {/* CTA */}
       <section className="py-16 px-4 bg-blue-50">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-blue-800 mb-6">Enroll Now</h2>
@@ -112,6 +107,4 @@ const CourseDetails = ({ course }: CourseProps) => {
       </section>
     </div>
   );
-};
-
-export default CourseDetails;
+}
