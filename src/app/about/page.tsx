@@ -20,7 +20,7 @@ export default function About() {
     </div>
     <div className="md:w-1/2">
       <Image
-        src="/images/dit-campus.jpg"
+        src="/hero-bg.jpg"
         alt="DIT Campus"
         width={500}
         height={400}
