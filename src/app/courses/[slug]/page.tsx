@@ -1,42 +1,29 @@
 import { courses } from '@/constants/courses';
 import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
-// Generate static paths for pre-rendering
+// ✅ Required for force-static routes
+export const dynamicParams = false;
+export const dynamic = 'force-static';
+
+// ✅ Generate static paths
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return courses.map((course) => ({ slug: course.slug }));
 }
 
-export const dynamicParams = false;
-export const dynamic = 'force-static';
+// ❌ Removed generateMetadata to rely on layout metadata
 
-// Metadata generation with proper async handling
-export async function generateMetadata({
-  params
+// ✅ ASYNC PAGE FUNCTION
+export default async function CoursePage({
+  params,
 }: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  // Properly await params
-  const { slug } = await Promise.resolve(params);
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   const course = courses.find((c) => c.slug === slug);
-  
-  if (!course) return {};
-  return {
-    title: `${course.title} | Dovepeak`,
-    description: course.description,
-  };
-}
 
-// Core page component with proper async handling
-export default async function CoursePage(props: { params: { slug: string } }) {
-  // Properly await params
-  const { slug } = await Promise.resolve(props.params);
-  const course = courses.find((c) => c.slug === slug);
-  
   if (!course) return notFound();
-
   return (
     <>
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-14 px-6 text-center">
@@ -49,7 +36,7 @@ export default async function CoursePage(props: { params: { slug: string } }) {
       </section>
 
       <main className="max-w-5xl mx-auto px-6 py-20">
-        <header className="mb-12 border-b border-blue极200 pb-6">
+        <header className="mb-12 border-b border-blue-200 pb-6">
           <h2 className="text-4xl font-bold text-blue-900 mb-3">
             {course.title} <span className="text-xl">{course.icon}</span>
           </h2>
