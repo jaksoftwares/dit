@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { LaptopIcon, Users, Globe, BookOpenText } from 'lucide-react';
+import CourseTracks from '@/components/CourseTracks';
 
 export default function Home() {
   return (
@@ -85,8 +86,10 @@ export default function Home() {
         </div>
       </section>
 
+
+<CourseTracks />
       {/* Enhanced Web Development Tracks */}
-<section className="py-20 px-4 bg-gray-50">
+{/* <section className="py-20 px-4 bg-gray-50">
   <div className="max-w-7xl mx-auto">
     <h2 className="text-4xl font-bold text-center text-blue-800 mb-6">Explore Our Specialized Web Development Tracks</h2>
     <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
@@ -165,7 +168,9 @@ export default function Home() {
       ))}
     </div>
   </div>
-</section>
+</section> */}
+
+
 
 
       {/* CTA Section */}
