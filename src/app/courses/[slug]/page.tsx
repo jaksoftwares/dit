@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   return courses.map((course) => ({ slug: course.slug }));
 }
 
-export const generateMetadata = ({ params }: Params): Metadata => {
+export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
   const course = courses.find((c) => c.slug === params.slug);
   if (!course) return {};
   return {
