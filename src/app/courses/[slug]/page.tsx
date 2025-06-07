@@ -9,16 +9,17 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return courses.map((course) => ({ slug: course.slug }));
 }
 
-export const dynamicParams = false; // Only use pre-generated static params
-export const dynamic = 'force-static'; // Ensure static rendering
+export const dynamicParams = false;
+export const dynamic = 'force-static';
 
-// ✅ Corrected generateMetadata with proper typing
+// Metadata generation with proper async handling
 export async function generateMetadata({
   params
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const { slug } = params;
+  // Properly await params
+  const { slug } = await Promise.resolve(params);
   const course = courses.find((c) => c.slug === slug);
   
   if (!course) return {};
@@ -28,13 +29,10 @@ export async function generateMetadata({
   };
 }
 
-// ✅ Use inline typing for props to match Next.js expectations
-export default function CoursePage({
-  params
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
+// Core page component with proper async handling
+export default async function CoursePage(props: { params: { slug: string } }) {
+  // Properly await params
+  const { slug } = await Promise.resolve(props.params);
   const course = courses.find((c) => c.slug === slug);
   
   if (!course) return notFound();
@@ -51,7 +49,7 @@ export default function CoursePage({
       </section>
 
       <main className="max-w-5xl mx-auto px-6 py-20">
-        <header className="mb-12 border-b border-blue-200 pb-6">
+        <header className="mb-12 border-b border-blue极200 pb-6">
           <h2 className="text-4xl font-bold text-blue-900 mb-3">
             {course.title} <span className="text-xl">{course.icon}</span>
           </h2>
@@ -97,7 +95,7 @@ export default function CoursePage({
             <p className="text-gray-800">{course.hoursPerDay}</p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-blue-700 mb极2">Price</h4>
+            <h4 className="text-lg font-semibold text-blue-700 mb-2">Price</h4>
             <p className="text-xl font-extrabold text-gray-900">{course.price}</p>
           </div>
         </section>
@@ -108,7 +106,7 @@ export default function CoursePage({
           </h3>
           <p className="text-gray-700 leading-relaxed">
             {course.targetAudience ||
-              'This course warmly welcomes anyone eager to learn and grow — whether you are a beginner, looking to switch careers, or want to deepen your knowledge. We believe learning is for everyone, and we’re here to support your journey.'}
+              'This course warmly welcomes anyone eager to learn and grow — whether you are a beginner, looking to switch careers, or want to deepen your knowledge. We believe learning is for everyone, and we\'re here to support your journey.'}
           </p>
         </section>
 
