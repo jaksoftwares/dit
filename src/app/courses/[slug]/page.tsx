@@ -10,13 +10,13 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 }
 
 export const dynamicParams = false; // Only use pre-generated static params
+export const dynamic = 'force-static'; // Ensure static rendering
 
-// ✅ Corrected generateMetadata with async handling
+// ✅ Corrected generateMetadata with proper typing
 export async function generateMetadata(
   { params }: { params: { slug: string } }
 ): Promise<Metadata> {
-  // Properly await params
-  const { slug } = await Promise.resolve(params);
+  const { slug } = params;
   const course = courses.find((c) => c.slug === slug);
   
   if (!course) return {};
@@ -26,16 +26,16 @@ export async function generateMetadata(
   };
 }
 
-interface CoursePageProps {
+// ✅ Simplified props interface
+type CoursePageProps = {
   params: {
     slug: string;
   };
-}
+};
 
-// ✅ Corrected page component with proper async handling
-export default async function CoursePage({ params }: CoursePageProps) {
-  // Properly await params
-  const { slug } = await Promise.resolve(params);
+// ✅ Corrected page component with synchronous handling
+export default function CoursePage({ params }: CoursePageProps) {
+  const { slug } = params;
   const course = courses.find((c) => c.slug === slug);
   
   if (!course) return notFound();
