@@ -13,9 +13,11 @@ export const dynamicParams = false; // Only use pre-generated static params
 export const dynamic = 'force-static'; // Ensure static rendering
 
 // ✅ Corrected generateMetadata with proper typing
-export async function generateMetadata(
-  { params }: { params: { slug: string } }
-): Promise<Metadata> {
+export async function generateMetadata({
+  params
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const { slug } = params;
   const course = courses.find((c) => c.slug === slug);
   
@@ -26,15 +28,12 @@ export async function generateMetadata(
   };
 }
 
-// ✅ Simplified props interface
-type CoursePageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-// ✅ Corrected page component with synchronous handling
-export default function CoursePage({ params }: CoursePageProps) {
+// ✅ Use inline typing for props to match Next.js expectations
+export default function CoursePage({
+  params
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
   const course = courses.find((c) => c.slug === slug);
   
@@ -98,7 +97,7 @@ export default function CoursePage({ params }: CoursePageProps) {
             <p className="text-gray-800">{course.hoursPerDay}</p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-blue-700 mb-2">Price</h4>
+            <h4 className="text-lg font-semibold text-blue-700 mb极2">Price</h4>
             <p className="text-xl font-extrabold text-gray-900">{course.price}</p>
           </div>
         </section>
