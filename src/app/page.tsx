@@ -20,7 +20,7 @@ export default function Home() {
               Hybrid classes. Certified trainers. Affordable packages.
             </p>
             <Link
-              href="/apply"
+              href="/courses"
               className="inline-block bg-blue-700 text-white px-6 py-3 rounded-md shadow hover:bg-blue-800 transition"
             >
               Apply Now
@@ -48,7 +48,7 @@ export default function Home() {
       Our mission is to empower learners with relevant skills through flexible hybrid learning models, experienced tutors, and hands-on training.
     </p>
     <Link
-      href="/apply"
+      href="/courses"
       className="inline-block bg-blue-700 text-white px-6 py-3 rounded-md shadow hover:bg-blue-800 transition"
     >
       Join DIT Today
@@ -88,100 +88,17 @@ export default function Home() {
 
 
 <CourseTracks />
-      {/* Enhanced Web Development Tracks */}
-{/* <section className="py-20 px-4 bg-gray-50">
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl font-bold text-center text-blue-800 mb-6">Explore Our Specialized Web Development Tracks</h2>
-    <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
-      Whether you&apos;re diving into frontend design, mastering backend logic, or building full-stack apps with Django or Next.js — our curated tracks are tailored to give you practical, real-world skills.
-    </p>
-
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      {[
-        {
-          title: 'Frontend Development with React',
-          duration: '6 Weeks',
-          price: 'KES 10,000',
-          focus: 'Interactive UI Design & State Management',
-          icon: '🎨',
-          technologies: ['HTML5', 'CSS3', 'JavaScript ES6+', 'React.js', 'TailwindCSS', 'GitHub'],
-        },
-        {
-          title: 'Backend Development with Django',
-          duration: '6 Weeks',
-          price: 'KES 12,000',
-          focus: 'Robust Backend Apps & REST APIs',
-          icon: '🛠️',
-          technologies: ['Python', 'Django Framework', 'Django REST Framework', 'PostgreSQL', 'Authentication', 'API Testing'],
-        },
-        {
-          title: 'Full-Stack Web Dev with Next.js & Django',
-          duration: '10 Weeks',
-          price: 'KES 18,000',
-          focus: 'Modern Full-Stack Applications',
-          icon: '🌐',
-          technologies: ['Next.js (React)', 'TailwindCSS', 'Django REST API', 'Supabase/PostgreSQL', 'JWT Auth', 'Vercel Deployment'],
-        },
-        {
-          title: 'Freelance Developer Launchpad',
-          duration: '4 Weeks',
-          price: 'KES 8,000',
-          focus: 'Real Projects & Client Skills',
-          icon: '💼',
-          technologies: ['Portfolio Setup', 'GitHub Pages', 'Client Briefs', 'Project Tools (Trello, Notion)', 'Invoicing', 'Time Tracking'],
-        },
-        {
-          title: 'UI/UX Design & Web Prototyping',
-          duration: '3 Weeks',
-          price: 'KES 6,000',
-          focus: 'Beautiful, User-Friendly Interfaces',
-          icon: '🧠',
-          technologies: ['Figma', 'Color Theory', 'Wireframing', 'Prototyping', 'UX Research', 'Accessibility'],
-        },
-        {
-          title: 'Website Management with WordPress',
-          duration: '2 Weeks',
-          price: 'KES 5,000',
-          focus: 'Launch & Maintain Websites Easily',
-          icon: '🔧',
-          technologies: ['WordPress', 'Elementor', 'SEO Basics', 'Hosting & Domains', 'Backup & Security', 'Google Indexing'],
-        },
-      ].map((course) => (
-        <div key={course.title} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
-          <div className="text-4xl mb-4">{course.icon}</div>
-          <h3 className="text-xl font-semibold text-blue-700 mb-1">{course.title}</h3>
-          <p className="text-gray-600 italic mb-1">{course.focus}</p>
-          <p className="text-gray-600 text-sm mb-3">Duration: {course.duration}</p>
-          <ul className="text-sm text-gray-700 list-disc list-inside mb-4 space-y-1">
-            {course.technologies.map((tech, i) => (
-              <li key={i}>{tech}</li>
-            ))}
-          </ul>
-          <p className="text-lg font-bold text-gray-800 mb-4">{course.price}</p>
-          <Link
-            href="/courses"
-            className="inline-block bg-blue-700 text-white px-5 py-2 rounded-md text-sm hover:bg-blue-800 transition"
-          >
-            View Details
-          </Link>
-        </div>
-      ))}
-    </div>
-  </div>
-</section> */}
-
-
 
 
       {/* CTA Section */}
-      <section className="bg-blue-700 py-12 px-4 text-white text-center">
+      <section className="bg-blue-700 py-12 px-4 text-white text-center -mb-10">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Tech Career?</h2>
           <p className="mb-6">
             Enroll at DIT and gain the skills you need to succeed in today’s digital world.
           </p>
           <Link
-            href="/apply"
+            href="/courses"
             className="bg-white text-blue-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100"
           >
             Apply Now

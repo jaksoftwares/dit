@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { Building, Users, Globe, ShieldCheck, Link } from 'lucide-react';
+import CTASection from '@/components/Cta';
+import { Building, Users, Globe, ShieldCheck,  } from 'lucide-react';
 
 export default function About() {
   return (
@@ -90,7 +91,7 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div className="bg-blue-50 p-6 rounded-lg shadow-md">
               <Image
-                src="/images/classroom.jpg"
+                src="/classrooms.jpg"
                 alt="Classroom"
                 width={350}
                 height={250}
@@ -100,7 +101,7 @@ export default function About() {
             </div>
             <div className="bg-blue-50 p-6 rounded-lg shadow-md">
               <Image
-                src="/images/lab.jpg"
+                src="/tech-classes.jpg"
                 alt="Tech Lab"
                 width={350}
                 height={250}
@@ -110,7 +111,7 @@ export default function About() {
             </div>
             <div className="bg-blue-50 p-6 rounded-lg shadow-md">
               <Image
-                src="/images/online-learning.jpg"
+                src="/online.jpg"
                 alt="Online Learning"
                 width={350}
                 height={250}
@@ -123,18 +124,7 @@ export default function About() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-blue-700 py-12 px-4 text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-          <p className="mb-6">Have questions? Feel free to reach out to us for more information about our courses, schedules, and application process.</p>
-          <Link
-            href="/contact"
-            className="bg-white text-blue-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
+      <CTASection/>
     </div>
   );
 }

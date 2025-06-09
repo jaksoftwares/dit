@@ -6,13 +6,13 @@ export default function CoursesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-blue-800 text-white py-20 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Explore Our Professional IT Courses</h1>
-          <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto">
-            Gain the skills to excel in today’s tech world. Whether you&apos;re a beginner or looking to specialize, we have a course tailored for you.
-          </p>
-        </div>
+      <section className="bg-gradient-to-r from-blue-100 to-white text-blue-900 py-24 px-6 text-center">
+        <h1 className="text-5xl font-extrabold drop-shadow-md">
+          Explore Our Professional IT Courses
+        </h1>
+        <p className="mt-3 text-lg max-w-2xl mx-auto font-light drop-shadow-sm">
+          Gain the skills to excel in today’s tech world. Whether you&apos;re a beginner or looking to specialize, we have a course tailored for you.
+        </p>
       </section>
 
       {/* Courses Grid */}

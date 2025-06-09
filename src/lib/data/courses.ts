@@ -32,7 +32,7 @@ export const courses: Course[] = [
     duration: '4 Weeks',
     price: 'KES 7,000',
     focus: 'Core Web Technologies & Programming Logic',
-    icon: '🧱',
+    icon: '',
     technologies: ['HTML5', 'CSS3', 'JavaScript ES6+', 'Git & GitHub', 'Responsive Design'],
     description:
       'This module is perfect for beginners looking to build a strong foundation in web development. You’ll learn how the web works, write clean HTML/CSS, version control with Git, and use JavaScript to make websites interactive.',
@@ -66,7 +66,7 @@ export const courses: Course[] = [
     duration: '4 Weeks',
     price: 'KES 7,000',
     focus: 'UI Design, React Components & State Management',
-    icon: '🎨',
+    icon: '',
     technologies: ['React.js', 'TailwindCSS', 'Hooks', 'Props & State', 'React Router'],
     description:
       'This module elevates your frontend skills by introducing modern JavaScript frameworks. You’ll design stunning UIs using React and Tailwind, manage app state, and learn to build production-grade interfaces.',
@@ -100,7 +100,7 @@ export const courses: Course[] = [
     duration: '4 Weeks',
     price: 'KES 7,000',
     focus: 'Django APIs + React Frontend + Deployment',
-    icon: '🛠️',
+    icon: '',
     technologies: [
       'Python',
       'Django',

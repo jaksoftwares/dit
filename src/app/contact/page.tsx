@@ -120,7 +120,7 @@ const ContactPage = () => {
               <Phone className="text-blue-700 w-6 h-6 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg">Phone</h3>
-                <p className="text-gray-600">+254 712 345 678</p>
+                <p className="text-gray-600">+254 115749711</p>
               </div>
             </div>
 
@@ -128,14 +128,14 @@ const ContactPage = () => {
               <Mail className="text-blue-700 w-6 h-6 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg">Email</h3>
-                <p className="text-gray-600">info@dovepeaktech.ac.ke</p>
+                <p className="text-gray-600">dovepeakdigital@gmail.com</p>
               </div>
             </div>
 
             {/* Optional: Google Map Embed */}
             <div className="w-full h-64 rounded-lg overflow-hidden border border-gray-300">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!..." // Add your custom embed link here
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0782087455714!2d37.010848175738786!3d-1.10361193545534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f475f31591ec5%3A0x372bedd06ee6a9ee!2sCk%20plaza!5e0!3m2!1sen!2ske!4v1748710297255!5m2!1sen!2ske" 
                 width="100%"
                 height="100%"
                 loading="lazy"

@@ -15,6 +15,7 @@ export interface Course {
   requirements: string;
   outcomes: string[];
   ctas: string[];
+  pdfUrl?: string;
   
   // New fields
   certificateInfo?: string;        // info about certificate issuance
@@ -56,6 +57,7 @@ export const courses: Course[] = [
       'Top graduates will have the opportunity to join Dovepeak Digital Solutions for practical work experience and job placement.',
     intakeInfo: 'Upcoming Intakes: July, August, and September.',
     courseSchedule: 'Classes run 4 days a week (Monday to Thursday), focusing on interactive and practical learning.',
+    pdfUrl: '/Module 1_ Web Foundations & Programming.pdf',
   },
 
   {
@@ -90,6 +92,7 @@ export const courses: Course[] = [
       'Graduates will be prioritized for roles and internships at Dovepeak Digital Solutions.',
     intakeInfo: 'Next available intakes: July, August, and September.',
     courseSchedule: 'Classes held Monday to Thursday, focusing on hands-on and interactive lessons.',
+    pdfUrl: '/Module 2_ Frontend Engineering with React.pdf',
   },
 
   {
@@ -133,5 +136,6 @@ export const courses: Course[] = [
       'Graduates will be invited to join Dovepeak Digital Solutions in full-stack roles or internships.',
     intakeInfo: 'Intakes available: July, August, and September.',
     courseSchedule: 'Interactive classes run Monday through Thursday, emphasizing hands-on projects.',
+    pdfUrl: '/Module 3_ Backend & Full-Stack Integration.pdf',
   },
 ];

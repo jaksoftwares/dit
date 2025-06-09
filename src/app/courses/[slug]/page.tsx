@@ -12,9 +12,9 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return courses.map((course) => ({ slug: course.slug }));
 }
 
-// ❌ Removed generateMetadata to rely on layout metadata
 
-// ✅ ASYNC PAGE FUNCTION
+
+
 export default async function CoursePage({
   params,
 }: {
@@ -23,10 +23,12 @@ export default async function CoursePage({
   const { slug } = await params;
   const course = courses.find((c) => c.slug === slug);
 
+  
+
   if (!course) return notFound();
   return (
     <>
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-14 px-6 text-center">
+     <section className="bg-gradient-to-r from-blue-100 to-white text-blue-900 py-24 px-6 text-center">
         <h1 className="text-5xl font-extrabold drop-shadow-md">
           {course.module}
         </h1>
@@ -34,6 +36,7 @@ export default async function CoursePage({
           {course.description}
         </p>
       </section>
+
 
       <main className="max-w-5xl mx-auto px-6 py-20">
         <header className="mb-12 border-b border-blue-200 pb-6">
@@ -146,17 +149,17 @@ export default async function CoursePage({
         </section>
 
         {course.ctas.length > 0 && (
-          <section className="mt-12 flex flex-col sm:flex-row gap-5 max-w-3xl">
-            {course.ctas.map((cta, idx) => (
-              <Link
-                key={idx}
-                href={`/apply?course=${course.slug}`}
-                className="inline-flex items-center justify-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-lg text-base font-semibold transition-shadow shadow-md hover:shadow-lg"
-              >
-                {cta} <ArrowRight className="w-5 h-5" />
-              </Link>
-            ))}
-          </section>
+  <section className="mt-12 flex flex-col sm:flex-row gap-5 max-w-3xl">
+    {course.ctas.map((cta, idx) => (
+      <Link
+        key={idx}
+        href={`/apply/${course.slug}`}
+        className="inline-flex items-center justify-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-lg text-base font-semibold transition-shadow shadow-md hover:shadow-lg"
+      >
+        {cta} <ArrowRight className="w-5 h-5" />
+      </Link>
+    ))}
+  </section>
         )}
       </main>
     </>

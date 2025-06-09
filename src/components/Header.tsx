@@ -9,7 +9,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Courses', path: '/courses' },
-  { name: 'Apply', path: '/apply' },
+  // { name: 'Apply', path: '/apply' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -43,7 +43,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="/apply"
+            href="/courses"
             className="ml-4 px-4 py-2 rounded-md bg-blue-700 text-white hover:bg-blue-800 text-sm shadow"
           >
             Apply Now
@@ -75,7 +75,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/apply"
+              href="/courses"
               onClick={toggleMenu}
               className="mt-2 text-center px-4 py-2 rounded-md bg-blue-700 text-white hover:bg-blue-800 text-sm shadow"
             >

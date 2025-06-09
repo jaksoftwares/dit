@@ -38,15 +38,15 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <MapPin size={18} className="text-blue-400 mt-1" />
-              <span>Nairobi, Kenya – Hybrid Classes (Online & Physical)</span>
+              <span>Juja, Kiambu, Kenya – Hybrid Classes (Online & Physical)</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={18} className="text-blue-400" />
-              <span>+254 712 345 678</span>
+              <span>+254 115749711</span>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={18} className="text-blue-400" />
-              <span>info@dit.ac.ke</span>
+              <span>dovepeakdigital@gmail.com</span>
             </li>
           </ul>
         </div>
